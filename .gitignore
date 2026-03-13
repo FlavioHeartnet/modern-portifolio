@@ -1,6 +1,7 @@
 # dependencies (bun install)
 node_modules
-
+.firebase
+hosting.*.cache
 # output
 out
 dist
