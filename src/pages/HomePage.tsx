@@ -102,7 +102,8 @@ export function HomePage() {
           }
         )
       })
-    })
+    });
+
 
   }, { scope: container });
   return (

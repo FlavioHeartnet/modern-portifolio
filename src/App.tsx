@@ -8,11 +8,22 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, ScrollSmoother);
 
 export function App() {
-  useEffect(() => {
+  useGSAP(() => {
+    if (document.querySelectorAll<HTMLElement>('#smooth-wrapper, #smooth-content').length === 2) {
+      gsap.config({ nullTargetWarn: false });
+
+      ScrollSmoother.create({
+        smooth: 1.35,
+        effects: true,
+        smoothTouch: 1,
+        normalizeScroll: true
+      });
+    }
     // Wire hamburger menu button to offcanvas
     const menuBar = document.getElementById("header-menu-bar");
     if (menuBar) {
