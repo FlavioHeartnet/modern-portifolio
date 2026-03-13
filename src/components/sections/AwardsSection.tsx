@@ -15,7 +15,7 @@ const awards = [
   { icon: award6, title: "Honorable mention", year: "2020" },
 ];
 
-export function AwardsSection({ animation = "fade-anim" }: { animation: string }) {
+export function AwardsSection({ animation = "fade-anim" }: { animation?: string }) {
   return (
     <div className="oit-award-area pt-140 pb-120" data-bg-color="#F5F5F5" style={{ backgroundColor: "#F5F5F5" }}>
       <div className="container">

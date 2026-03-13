@@ -25,7 +25,7 @@ const faqs = [
   },
 ];
 
-export function FaqSection({ animation = "fade-anim" }: { animation: string }) {
+export function FaqSection({ animation = "fade-anim" }: { animation?: string }) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (

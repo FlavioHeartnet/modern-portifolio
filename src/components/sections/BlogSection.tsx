@@ -9,7 +9,7 @@ const blogs = [
   { title: "Design Thinking and Its Role in Digital Product", img: blog3, date: "August 15, 2025", delay: ".7" },
 ];
 
-export function BlogSection({ animation = "fade-anim" }: { animation: string }) {
+export function BlogSection({ animation = "fade-anim" }: { animation?: string }) {
   return (
     <div className="oit-blog-area pt-120 pb-90" data-bg-color="#f5f5f5" style={{ backgroundColor: "#f5f5f5" }}>
       <div className="container">

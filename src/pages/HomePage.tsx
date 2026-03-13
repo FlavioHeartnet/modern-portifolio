@@ -108,17 +108,17 @@ export function HomePage() {
   }, { scope: container });
   return (
     <div ref={container}>
-      <HeroSection animation={"hero-fade-anim"} />
-      <AboutSection animation={"fade-anim"} />
+      <HeroSection />
+      <AboutSection />
       <ProjectsSection />
       <ServicesSection />
       <FunfactSection />
-      <AwardsSection animation={"fade-anim"} />
-      <TeamSection animation={"fade-anim"} />
-      <PricingSection animation={"fade-anim"} />
-      <FaqSection animation={"fade-anim"} />
+      <AwardsSection />
+      <TeamSection />
+      <PricingSection />
+      <FaqSection />
       <LineSlider />
-      <BlogSection animation={"fade-anim"} />
+      <BlogSection />
       <TextSliderSection />
     </div>
   );

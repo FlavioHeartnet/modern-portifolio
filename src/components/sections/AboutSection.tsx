@@ -3,7 +3,7 @@ import abShape1 from "../../assets/img/about/ab-shape-1.jpg";
 import ab1 from "../../assets/img/about/ab-1.jpg";
 
 
-export function AboutSection({ animation = "fade-anim" }: { animation: string }) {
+export function AboutSection({ animation = "fade-anim" }: { animation?: string }) {
 
   return (
     <div className="oit-about-area p-relative pt-150 pb-150" data-bg-color="#F5F5F5" style={{ backgroundColor: "#F5F5F5" }}>

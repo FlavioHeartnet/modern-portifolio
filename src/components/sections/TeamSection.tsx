@@ -11,7 +11,7 @@ const teamMembers = [
   { name: "Elon Musk", role: "Investor", img: team4 },
 ];
 
-export function TeamSection({ animation = "fade-anim" }: { animation: string }) {
+export function TeamSection({ animation = "fade-anim" }: { animation?: string }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (

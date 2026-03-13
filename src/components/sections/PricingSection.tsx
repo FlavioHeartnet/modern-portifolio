@@ -20,7 +20,7 @@ const projectFeatures = [
   "Fast turnaround on key tasks",
 ];
 
-export function PricingSection({ animation = "fade-anim" }: { animation: string }) {
+export function PricingSection({ animation = "fade-anim" }: { animation?: string }) {
   const [activeTab, setActiveTab] = useState<"monthly" | "project">("monthly");
 
   return (

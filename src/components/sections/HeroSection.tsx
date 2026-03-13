@@ -2,7 +2,7 @@ import { ArrowIcon, HeroStarIcon, DownArrowIcon, ArrowRight } from "../icons/Arr
 import heroBg from "../../assets/img/hero/hero-bg.jpg";
 
 
-export function HeroSection({ animation }: { animation: string }) {
+export function HeroSection({ animation = 'hero-fade-anim' }: { animation?: string }) {
 
 
   return (
