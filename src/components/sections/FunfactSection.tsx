@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-function Counter({ end, duration = 1 }: { end: number; duration?: number }) {
+function Counter({ end, duration = 1, style }: { end: number; duration?: number; style?: React.CSSProperties }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
@@ -32,7 +32,7 @@ function Counter({ end, duration = 1 }: { end: number; duration?: number }) {
     return () => observer.disconnect();
   }, [end, duration]);
 
-  return <span ref={ref}>{count}</span>;
+  return <span ref={ref} style={style}>{count}</span>;
 }
 
 const stats = [
@@ -51,7 +51,7 @@ export function FunfactSection() {
             <div key={i} className="col">
               <div className="oit-funfact-item text-center">
                 <h4 className="oit-funfact-title">
-                  <Counter end={stat.end} duration={1} />
+                  <Counter end={stat.end} duration={1} style={{ fontSize: "100px" }} />
                   {stat.suffix}
                 </h4>
                 <span>{stat.label}</span>
