@@ -1,4 +1,5 @@
 import { ArrowIcon } from "../icons/ArrowIcon";
+import { useTheme } from "../../contexts/ThemeContext";
 import award1 from "../../assets/img/award/award-1.png";
 import award2 from "../../assets/img/award/award-2.png";
 import award3 from "../../assets/img/award/award-3.png";
@@ -16,8 +17,11 @@ const awards = [
 ];
 
 export function AwardsSection({ animation = "fade-anim" }: { animation?: string }) {
+  const { theme } = useTheme();
+  const bgColor = theme === "light" ? "#F5F5F5" : "transparent";
+
   return (
-    <div className="oit-award-area pt-140 pb-120" data-bg-color="#F5F5F5" style={{ backgroundColor: "#F5F5F5" }}>
+    <div className="oit-award-area pt-140 pb-120" data-bg-color={bgColor} style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="row">
           <div className="col-xl-4">

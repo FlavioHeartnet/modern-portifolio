@@ -1,4 +1,5 @@
 import { CalendarIcon } from "../icons/ArrowIcon";
+import { useTheme } from "../../contexts/ThemeContext";
 import blog1 from "../../assets/img/blog/blog-1.jpg";
 import blog2 from "../../assets/img/blog/blog-2.jpg";
 import blog3 from "../../assets/img/blog/blog-3.jpg";
@@ -10,8 +11,11 @@ const blogs = [
 ];
 
 export function BlogSection({ animation = "fade-anim" }: { animation?: string }) {
+  const { theme } = useTheme();
+  const bgColor = theme === "light" ? "#f5f5f5" : "transparent";
+
   return (
-    <div className="oit-blog-area pt-120 pb-90" data-bg-color="#f5f5f5" style={{ backgroundColor: "#f5f5f5" }}>
+    <div className="oit-blog-area pt-120 pb-90" data-bg-color={bgColor} style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="row">
           <div className="col-xl-2">

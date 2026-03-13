@@ -25,11 +25,15 @@ const faqs = [
   },
 ];
 
+import { useTheme } from "../../contexts/ThemeContext";
+
 export function FaqSection({ animation = "fade-anim" }: { animation?: string }) {
   const [openIndex, setOpenIndex] = useState(0);
+  const { theme } = useTheme();
+  const bgColor = theme === "light" ? "#f5f5f5" : "transparent";
 
   return (
-    <div className="oit-faq-area oit-faq-style pt-120 pb-65" data-bg-color="#f5f5f5" style={{ backgroundColor: "#f5f5f5" }}>
+    <div className="oit-faq-area oit-faq-style pt-120 pb-65" data-bg-color={bgColor} style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="row">
           <div className="col-xl-4">

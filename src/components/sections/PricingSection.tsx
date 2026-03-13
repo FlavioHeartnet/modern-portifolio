@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowIcon, SparkIcon } from "../icons/ArrowIcon";
+import { useTheme } from "../../contexts/ThemeContext";
 import avatar1 from "../../assets/img/avater/avater-1.png";
 
 const monthlyFeatures = [
@@ -22,9 +23,11 @@ const projectFeatures = [
 
 export function PricingSection({ animation = "fade-anim" }: { animation?: string }) {
   const [activeTab, setActiveTab] = useState<"monthly" | "project">("monthly");
+  const { theme } = useTheme();
+  const bgColor = theme === "light" ? "#0D0D0D" : "transparent";
 
   return (
-    <div className="oit-price-area pt-120 pb-120" data-bg-color="#0D0D0D" style={{ backgroundColor: "#0D0D0D" }}>
+    <div className="oit-price-area pt-120 pb-120" data-bg-color={bgColor} style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="row">
           <div className="col-xxl-2">

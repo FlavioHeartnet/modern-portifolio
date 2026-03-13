@@ -1,7 +1,11 @@
 import { ArrowIcon } from "../icons/ArrowIcon";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "../../contexts/ThemeContext";
 import logoWhite from "../../assets/img/logo/logo-white.png";
 
 export function Header() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header>
       <div className="oit-header-area oit-header-transparent pt-35">
@@ -14,6 +18,14 @@ export function Header() {
             </div>
             <div className="col-6">
               <div className="oit-header-action d-flex align-items-center justify-content-end">
+                <button 
+                  onClick={toggleTheme}
+                  className="oit-header-bar oit-menu-bar mr-20 d-flex align-items-center justify-content-center"
+                  style={{ width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff' }}
+                  aria-label="Toggle Theme"
+                >
+                  {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+                </button>
                 <a className="oit-btn-border d-none d-md-inline-flex d-inline-flex align-items-center justify-content-between" href="#contact">
                   <span>
                     <span className="text-1">Book A Call Now</span>

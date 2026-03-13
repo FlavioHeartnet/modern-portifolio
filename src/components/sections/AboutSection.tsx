@@ -1,12 +1,15 @@
 import { ArrowIcon, ArrowIconLarge } from "../icons/ArrowIcon";
+import { useTheme } from "../../contexts/ThemeContext";
 import abShape1 from "../../assets/img/about/ab-shape-1.jpg";
 import ab1 from "../../assets/img/about/ab-1.jpg";
 
 
 export function AboutSection({ animation = "fade-anim" }: { animation?: string }) {
+  const { theme } = useTheme();
+  const bgColor = theme === "light" ? "#F5F5F5" : "transparent";
 
   return (
-    <div className="oit-about-area p-relative pt-150 pb-150" data-bg-color="#F5F5F5" style={{ backgroundColor: "#F5F5F5" }}>
+    <div className="oit-about-area p-relative pt-150 pb-150" data-bg-color={bgColor} style={{ backgroundColor: bgColor }}>
       <div className="oit-about-shape d-none d-lg-block">
         <img data-speed=".8" src={abShape1} alt="" />
       </div>

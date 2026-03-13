@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTheme } from "../../contexts/ThemeContext";
 
 function Counter({ end, duration = 1, style }: { end: number; duration?: number; style?: React.CSSProperties }) {
   const [count, setCount] = useState(0);
@@ -43,8 +44,11 @@ const stats = [
 ];
 
 export function FunfactSection() {
+  const { theme } = useTheme();
+  const bgColor = theme === "light" ? "#F5F5F5" : "transparent";
+
   return (
-    <div className="oit-funfact-area oit-funfact-bdr" data-bg-color="#F5F5F5" style={{ backgroundColor: "#F5F5F5" }}>
+    <div className="oit-funfact-area oit-funfact-bdr" data-bg-color={bgColor} style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
           {stats.map((stat, i) => (
